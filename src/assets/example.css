@@ -24,3 +24,8 @@
 #password {
   padding-right: calc(1rem + 38px);
 }
+
+#milligram {
+  margin-top: 2.5rem;
+  text-align: center;
+}

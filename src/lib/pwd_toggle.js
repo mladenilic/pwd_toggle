@@ -2,6 +2,7 @@ class PwdToggle {
   constructor(element, options = {}) {
     this.element = element;
     this.options = options;
+    this.options.focus = this.options.focus || false;
 
     if (!element instanceof HTMLInputElement || element.tagName !== 'INPUT') {
       throw new Error('PwdToggle - Invalid element');
@@ -28,12 +29,14 @@ class PwdToggle {
     this.element.type = PwdToggle.password;
 
     this.options.onHide && this.options.onHide.call(this);
+    this.options.focus && this.element.focus();
   }
 
   toggle() {
     this.isShown() ? this.hide() : this.show();
 
     this.options.onToggle && this.options.onToggle.call(this);
+    this.options.focus && this.element.focus();
   }
 
   isShown() {

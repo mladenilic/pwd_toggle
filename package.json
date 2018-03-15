@@ -1,6 +1,6 @@
 {
   "name": "pwd_toggle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minimalist tool bult for developers and written in vanila js that simplifies adding password visibility toggle button.",
   "main": "src/lib/pwd_toggle.js",
   "dependencies": {},

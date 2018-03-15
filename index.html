@@ -7,17 +7,11 @@
   <body>
     <div class="container">
       <h1>Password Toggle Demo</h1>
-      <form action="/">
-        <div class="username-wrapper">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username">
-        </div>
-        <div class="password-wrapper">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password">
-          <a href="#" id="password-toggle">Toggle Password</a>
-        </div>
-      </form>
+      <div class="password-wrapper">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <a href="#" id="password-toggle">Toggle Password</a>
+      </div>
     </div>
     <script>
       var pwd = new PwdToggle(document.getElementById('password'));

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Password Toggle</title>
+  </head>
+  <body>
+    <h1>Password Toggle Demo</h1>
+    <form action="/">
+      <div class="username-wrapper">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+      </div>
+      <div class="password-wrapper">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <a href="#" id="password-toggle">Toggle Password</a>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <script src="dist/bundle.js"></script>
+    <script>
+      var pwd = new PwdToggle(document.getElementById('password'));
+
+      document.getElementById('password-toggle').addEventListener('click', function (e) {
+        e.preventDefault();
+
+        pwd.toggle();
+
+        this.classList.toggle('pwd-toggle-shown', pwd.isShown());
+      });
+    </script>
+  </body>
+</html>

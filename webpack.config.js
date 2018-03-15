@@ -1,10 +1,13 @@
 var path = require('path');
 
 module.exports = {
-    entry: './src/pwd_toggle.js',
+    entry: {
+      example: './src/example.js',
+      pwd_toggle: './src/lib/pwd_toggle.js'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -17,6 +20,10 @@ module.exports = {
                   presets: ['@babel/preset-env']
                 }
               }
+            },
+            {
+              test: /\.css$/,
+              use: [ 'style-loader', 'css-loader' ]
             }
         ]
     },

@@ -1,3 +1,26 @@
 .container {
   max-width: 80rem;
 }
+
+.password-wrapper {
+  position: relative;
+}
+
+#password-toggle {
+  background: url('images/unlock.png') center no-repeat;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 38px;
+  height: 38px;
+  text-indent: -100%;
+  overflow: hidden;
+}
+
+#password-toggle.pwd-toggle-shown {
+  background-image: url('images/unlock.png');
+}
+
+#password {
+  padding-right: calc(1rem + 38px);
+}

@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
     entry: {
-      example: './src/example.js',
+      'example/bundle': './src/example.js',
       pwd_toggle: './src/lib/pwd_toggle.js'
     },
     output: {
@@ -23,7 +23,26 @@ module.exports = {
             },
             {
               test: /\.css$/,
-              use: [ 'style-loader', 'css-loader' ]
+              use: [
+                {
+                  loader: 'style-loader'
+                },
+                {
+                  loader: 'css-loader',
+                  options: {
+                    root: '/dist'
+                  }
+                }
+              ]
+            },
+            {
+              test: /\.(png|jpg|gif)$/,
+              use: {
+                loader: 'file-loader',
+                options: {
+                  name: 'example/images/[name].[ext]'
+                }
+              }
             }
         ]
     },

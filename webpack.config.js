@@ -23,24 +23,15 @@ module.exports = {
             },
             {
               test: /\.css$/,
-              use: [
-                {
-                  loader: 'style-loader'
-                },
-                {
-                  loader: 'css-loader',
-                  options: {
-                    root: '/dist'
-                  }
-                }
-              ]
+              use: [ 'style-loader', 'css-loader' ]
             },
             {
               test: /\.(png|jpg|gif)$/,
               use: {
                 loader: 'file-loader',
                 options: {
-                  name: 'example/images/[name].[ext]'
+                  name: 'example/images/[name].[ext]',
+                  publicPath: 'dist/'
                 }
               }
             }

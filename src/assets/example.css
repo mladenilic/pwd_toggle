@@ -18,7 +18,7 @@
 }
 
 #password-toggle.pwd-toggle-shown {
-  background-image: url('images/unlock.png');
+  background-image: url('images/lock.png');
 }
 
 #password {

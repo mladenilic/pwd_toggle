@@ -7,22 +7,33 @@
   <body>
     <div class="container">
       <h1>Password Toggle Demo</h1>
+      <p><em>Password Toggle</em> is a minimalist tool bult for developers that simplifies adding password visibility toggle button. Click on <img src="/dist/example/images/unlock.png" alt=""> to toggle password.</p>
       <div class="password-wrapper">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" value="password toggle :)">
+        <input type="password" name="password" id="password" value="Cool, right? :)">
         <a href="#" id="password-toggle">Toggle Password</a>
       </div>
     </div>
     <script>
-      var pwd = new PwdToggle(document.getElementById('password'));
+      var toggle = document.getElementById('password-toggle');
+      var pwd = new PwdToggle(document.getElementById('password'), {
+        focus: true,
+        onShow: function () {
+          console.log('show');
+        },
+        onHide: function () {
+          console.log('hide');
+        },
+        onToggle: function () {
+          toggle.classList.toggle('pwd-toggle-shown', this.isShown());
+          console.log('toggle');
+        }
+      });
 
-      document.getElementById('password-toggle').addEventListener('click', function (e) {
+      toggle.addEventListener('click', function (e) {
         e.preventDefault();
 
         pwd.toggle();
-
-        this.classList.toggle('pwd-toggle-shown', pwd.isShown());
-        pwd.element.focus();
       });
     </script>
   </body>

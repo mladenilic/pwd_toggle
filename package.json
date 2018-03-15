@@ -21,5 +21,9 @@
     "start:dev": "webpack-dev-server --watch-content-base --mode development"
   },
   "author": "Mladen Ilic",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mladenilic/pwd_toggle"
+  },
   "license": "ISC"
 }
